@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     document.body.appendChild(btn)
     btn.appendChild(btnText)
     btn.addEventListener('click',()=>{
-        alert('works')
+        alert('and I work (hard for my money)!')
     })
 
     document.getElementById('htmlBtn').addEventListener('click',()=>{
@@ -24,6 +24,28 @@ document.addEventListener('DOMContentLoaded',()=>{
     })
 
     document.getElementById('para').addEventListener('click',()=>{
-        document.getElementById('para').style.backgroundColor = 'red'
+        let x = Math.floor(Math.random()*255)
+        let y = Math.floor(Math.random()*255)
+        let z = Math.floor(Math.random()*255)
+        let randomColor = `rgb(${x},${y},${z})`
+        document.getElementById('para').style.color = randomColor
+    })
+
+    document.getElementById('spanButton').addEventListener('click',()=>{
+        let span = document.createElement('span')
+        let spanText = document.createTextNode('Jason')
+        document.getElementById('htmlDiv').appendChild(span)
+        span.appendChild(spanText)
+    })
+
+    let friendArray = ['wayneCarl','Ian','Rob','Kenbo','Branden','Kenny','Dave','Alex','Jess','Harry']
+    let friendIndex = 0
+
+    document.getElementById('friendButton').addEventListener('click',()=>{
+        let friend = document.createElement('li')
+        let friendText = document.createTextNode(friendArray[friendIndex])
+        friendIndex++
+        document.getElementById('friendList').appendChild(friend)
+        friend.appendChild(friendText)
     })
 })
